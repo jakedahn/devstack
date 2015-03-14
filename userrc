@@ -1,0 +1,5 @@
+export OS_TENANT_NAME=jakedahn
+export OS_USERNAME=jakedahn
+export OS_PASSWORD=hockey
+export OS_AUTH_URL=http://turbo.stsh:5000/v2.0
+

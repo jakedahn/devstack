@@ -1,0 +1,4 @@
+export OS_TENANT_NAME=admin
+export OS_USERNAME=admin
+export OS_PASSWORD=secrete0123
+export OS_AUTH_URL=http://turbo.stsh:5000/v2.0
