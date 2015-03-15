@@ -20,4 +20,4 @@ proto
 shocco
 src
 stack-screenrc
-*.img
+*.img*

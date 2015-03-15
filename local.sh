@@ -29,3 +29,15 @@ GLANCE_SERVICE_PROTOCOL=http
 source $TOP_DIR/adminrc
 TOKEN=$(keystone token-get | grep ' id ' | get_field 2)
 upload_image "https://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img" $TOKEN
+
+if [[ ! -a $TOP_DIR/coreos_production_openstack_image.img ]]; then
+	wget "http://alpha.release.core-os.net/amd64-usr/current/coreos_production_openstack_image.img.bz2"
+	bunzip2 coreos_production_openstack_image.img.bz2
+
+fi
+
+glance image-create --name CoreOS \
+  --container-format bare \
+  --disk-format qcow2 \
+  --file coreos_production_openstack_image.img \
+  --is-public True
